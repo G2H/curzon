@@ -3,11 +3,23 @@ api_version: 1
 threadsafe: true
 
 handlers:
-- url: /.*
+- url: /getData
   script: curzon.app
+- url: /whoami
+  script: curzon.app
+- url: /
+  static_files: src/index.html
+  upload: src/index.html
+  expiration: "15m"
+- url: /(.*\.js)
+  mime_type: text/javascript
+  static_files: src/\1
+  upload: src/(.*\.js)
+- url: /(.*\.css)
+  mime_type: text/css
+  static_files: src/\1
+  upload: src/(.*\.css)
 
 libraries:
-- name: webapp2
-  version: latest
 - name: webapp2
   version: latest

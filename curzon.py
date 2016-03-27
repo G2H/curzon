@@ -7,7 +7,7 @@ import cgi
 from google.appengine.api import users
 from curzon_parser import *
 
-class MainPage(webapp2.RequestHandler):
+class hello(webapp2.RequestHandler):
     def get(self):
         user = users.get_current_user()
         if user:
@@ -18,15 +18,18 @@ class MainPage(webapp2.RequestHandler):
 
 class getData(webapp2.RequestHandler):
 	def get(self):
+		today = 'http://www.google.com/movies?near=london&date=0&tid&q=curzon'
+		data = JSONfromURL(today)
 		site = createSite(data)
+		self.response.headers.add_header("Access-Control-Allow-Origin", "*")
 		self.response.headers['Content-Type'] = 'application/json'   
-		obj = {
-			'success': 'success', 
-			'payload': '',
-		 } 
+		# obj = {
+		# 	'success': 'success', 
+		# 	'payload': '',
+		#  } 
 		self.response.write(json.dumps(site))
 
 app = webapp2.WSGIApplication([
-    ('/', MainPage),
+    ('/whoami', hello),
     ('/getData', getData),
 ], debug=True)

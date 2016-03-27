@@ -1,12 +1,6 @@
 import urllib
 from bs4 import BeautifulSoup
 
-# todo
-# app engine app
-# cron to get info every morning
-# store in sqlite
-# in sqlite, get synopsis and score of the movie
-
 def JSONfromURL(url):
 	url_to_open = urllib.urlopen(url)
 	html = url_to_open.read()
@@ -84,5 +78,4 @@ def createSite(data):
 		pages.append(cinema_menu)
 	site['pages'] = pages
 	return site
-data = JSONfromURL(today)
 #createSite(data)

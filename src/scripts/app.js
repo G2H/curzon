@@ -147,3 +147,12 @@ function renderPage(object,id){
     if(ObjectToRender.type=='page'){generatePage(ObjectToRender.elements);}
     drawReturnButton();
 }
+
+function changeId(newid){
+    if (typeof current_id !== 'undefined' & typeof newid !== 'undefined') {
+        newid !== previous_ids[previous_ids.length -1] && previous_ids.push(current_id); //only append if not return
+        previous_ids.includes(newid) && previous_ids.pop(); 
+        current_id = newid;
+    }
+    renderPage(data,current_id);
+}
