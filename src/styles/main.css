@@ -1,0 +1,176 @@
+:root {
+	/* here we set variables
+	can't use yet because not supported on android */
+  --left-space: 50px;
+}
+
+body{
+	background-color: white;
+	color: #363e43;
+	height: 100%; 
+	width: 100%;
+	font-family: 'Helvetica Neue';
+	
+}
+#container{
+
+}
+#title{
+	background-color: #15AB8A;
+	text-align: center;
+	height: 40px;
+	/*padding-top: 20px;*/
+	border-bottom: 1px solid #edece9;
+}
+#title_text{
+	/*padding-top: 22px;*/
+
+}
+#subtitle{
+	background-color: #ECF0F1;
+	height: 0px;
+	padding-left: 50px; /* icon div width*/
+	padding-top: 0px;
+}
+
+#return_button{
+	color: black;
+	width: 50px;
+	position: absolute;
+	padding-left: 0px;
+	padding-top: 10px;
+	font-size: 150%;
+	font-weight: bold;
+	/* inverse the arrow character */
+	-moz-transform: scale(-1, 1);
+	-webkit-transform: scale(-1, 1);
+	-o-transform: scale(-1, 1);
+	-ms-transform: scale(-1, 1);
+	transform: scale(-1, 1);
+}
+
+#footer{
+	height: 50px;
+	text-align: center;
+	width: 100%;
+	padding-top: 10px;
+	border-top: 1px solid #edece9;
+	position: fixed; /*  place footer at the bottom */
+    bottom: 0; /*  place footer at the bottom */
+}
+#text_content{
+	background-color: white;
+	height: 100%;
+	width: 100%;
+	padding: 20px;
+	padding-left: 50px;
+	text-align: justify;
+}
+
+/* Menu elements */
+.line{
+	display: block;
+    position: relative;
+    border-bottom: 1px solid #edece9;
+	color: #363e43;
+	background-color: white;
+	text-decoration: none;
+	height: 70px;
+	width: 100%;
+}
+.icon{
+	display: block;
+	width: 50px;
+	height: 70px;
+	float: left;
+}
+.line_title{
+	padding-top: 10px;
+	font-weight: bold;
+	font-size: 140%;
+	font-color: #333333;
+}
+.line_subtitle{
+	font-size: 110%;
+    color: #767676;
+	float: left;
+	padding-top: 4px;
+}
+.icon{
+	font-size: 200%;
+	padding-top: 24px;
+	text-align: center;
+
+}
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+}
+.chevron{
+	font-size: 200%;
+	padding-right: 20px;
+	margin-top:-8px; /* Horrible hack */
+	position: absolute;
+	right:0;
+}
+
+
+/* Loader animation */
+.loader,
+.loader:before,
+.loader:after {
+  background: #3498DB;
+  -webkit-animation: load1 1s infinite ease-in-out;
+  animation: load1 1s infinite ease-in-out;
+  width: 1em;
+  height: 4em;
+}
+.loader:before,
+.loader:after {
+  position: absolute;
+  top: 0;
+  content: '';
+}
+.loader:before {
+  left: -1.5em;
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+.loader {
+  text-indent: -9999em;
+  margin: 88px auto;
+  position: relative;
+  font-size: 11px;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+.loader:after {
+  left: 1.5em;
+}
+@-webkit-keyframes load1 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 0 #3498DB;
+    height: 4em;
+  }
+  40% {
+    box-shadow: 0 -2em #3498DB;
+    height: 5em;
+  }
+}
+@keyframes load1 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 0 #3498DB;
+    height: 4em;
+  }
+  40% {
+    box-shadow: 0 -2em #3498DB;
+    height: 5em;
+  }
+}
