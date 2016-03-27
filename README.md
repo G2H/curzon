@@ -1,4 +1,6 @@
-# curzon
+# curzon listings
+
+An app engine mobile first webapp to retrieve showings info at curzon cinemas in London
 
 ## Todo
 
